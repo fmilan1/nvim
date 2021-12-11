@@ -1,0 +1,85 @@
+"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+
+"autocmd CursorHold * silent call CocActionAsync('highlight')
+
+
+inoremap <silent><expr> <TAB>
+     \ pumvisible() ? "\<C-n>" :
+     \ <SID>check_back_space() ? "\<TAB>" :
+     \ coc#refresh()
+
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+
+:set number
+:set scrolloff=5
+:set shiftwidth=4
+
+
+
+"nerdtree tabs control
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+map  <C-n> :tabnew<CR>
+
+" ctrl-D to duplicate line
+inoremap <C-d> <ESC>:t.<CR>
+nnoremap <C-d> :t.<CR>
+
+" ctrl-space to open completetion
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" move line up and down
+nnoremap <A-j> :m .+1<CR>
+nnoremap <A-k> :m .-2<CR>
+inoremap <A-k> <ESC>:m .-2<CR>
+inoremap <A-j> <ESC>:m .+1<CR>
+
+"back to normal mode
+inoremap jj <ESC>
+
+"quit without saving
+nnoremap qq :q!<CR>
+
+" quick save
+nnoremap zz :w<CR>
+
+map <F8> :NERDTreeToggle<CR>
+
+"source '$HOME/.config/nvim/plug-config/coc.vim'
+
+call plug#begin('~/.config/nvim/autoload/plugged')
+
+    " File explorer
+    Plug 'scrooloose/NERDTree'
+
+    " Auto pairs for '(' '[' '{'
+    " Plug 'jiangmiao/auto-pairs'
+
+    " Stable version of coc
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    Plug 'kyoz/purify', { 'rtp': 'vim' }
+
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
+    Plug 'rust-lang/rust.vim'
+
+    " git integration
+    Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'junegunn/gv.vim'
+
+call plug#end()
+
+let g:airline_theme='purify'
+syntax enable
+filetype plugin indent on
+syntax on " This is required
+" colorscheme purify
+
+colorscheme purify "--------------------------------- Set onedark theme
+hi Normal guibg=#252834 ctermbg=234 "---- Place this after you set the colorscheme
