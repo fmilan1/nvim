@@ -17,6 +17,10 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 :set scrolloff=5
 :set shiftwidth=4
 
+" resize panels
+nnoremap <A-Left> :vertical resize -1<Enter>
+nnoremap <A-Right> :vertical resize +1<Enter>
+
 " F12 to run
 map <F12> :RustRun<CR>
 map <F12> :! g++ %:r.cpp -o %:r.out && ./%:r.out<Enter>
