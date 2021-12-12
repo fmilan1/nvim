@@ -16,7 +16,11 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 :set scrolloff=5
 :set shiftwidth=4
 
+" F12 to run
+map <F12> :RustRun<CR>
 
+"NERDTree autorefresh
+nnoremap <C-r> :NERDTreeRefreshRoot<CR>
 
 "nerdtree tabs control
 map  <C-l> :tabn<CR>
@@ -45,6 +49,7 @@ nnoremap qq :q!<CR>
 " quick save
 nnoremap zz :w<CR>
 
+" NERDTreeToggle
 map <F8> :NERDTreeToggle<CR>
 
 "source '$HOME/.config/nvim/plug-config/coc.vim'
