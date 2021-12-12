@@ -20,6 +20,8 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " resize panels
 nnoremap <A-Left> :vertical resize -1<Enter>
 nnoremap <A-Right> :vertical resize +1<Enter>
+nnoremap <A-Up> :resize +1<Enter>
+nnoremap <A-Down> :resize -1<Enter>
 
 " F12 to run
 map <F12> :RustRun<CR>
