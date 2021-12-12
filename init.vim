@@ -19,6 +19,12 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " F12 to run
 map <F12> :RustRun<CR>
+map <F12> :! g++ %:r.cpp -o %:r.out && ./%:r.out<Enter>
+
+" comment C++
+vnoremap <C-j> :norm ^xx<Enter>
+vnoremap <C-k> :norm i//<Enter>
+
 
 "NERDTree autorefresh
 nnoremap <C-r> :NERDTreeRefreshRoot<CR>
