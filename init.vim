@@ -85,19 +85,19 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'rust-lang/rust.vim'
 
+    Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+
     " git integration
     Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
 
+
 call plug#end()
 
-let g:airline_theme='purify'
-syntax enable
-filetype plugin indent on
-syntax on " This is required
-" colorscheme purify
+colorscheme challenger_deep
 
-colorscheme purify "--------------------------------- Set onedark theme
-hi Normal guibg=#252834 ctermbg=234 "---- Place this after you set the colorscheme
+" colorscheme purify "--------------------------------- Set onedark theme
+" hi Normal guibg=#252334 ctermbg=234 "---- Place this after you set the colorscheme
+" hi Normal guibg=#252834 ctermbg=234 "---- Place this after you set the colorscheme
