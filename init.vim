@@ -93,9 +93,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
 
+    " omnisharp
+    Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
-
 colorscheme challenger_deep
 
 " colorscheme purify "--------------------------------- Set onedark theme
