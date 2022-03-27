@@ -22,7 +22,7 @@ nnoremap <A-Up> :resize +1<Enter>
 nnoremap <A-Down> :resize -1<Enter>
 
 " F5 to run dotnet
-map <F5> :! dotnet run<Enter>
+map <F5> <ESC>:w <Enter> :! dotnet run<Enter>
 
 " comment
 vnoremap <C-j> :norm ^xx<Enter>
@@ -92,6 +92,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
+
+:highlight String ctermfg=204
 
 " colorscheme challenger_deep
 " colorscheme purify "--------------------------------- Set onedark theme
