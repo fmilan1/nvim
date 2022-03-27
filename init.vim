@@ -9,12 +9,10 @@ inoremap <silent><expr> <TAB>
      \ <SID>check_back_space() ? "\<TAB>" :
      \ coc#refresh()
 
-
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
-
 :set number
-:set scrolloff=5
+:set scrolloff=10
 :set shiftwidth=4
 
 " resize panels
@@ -23,17 +21,16 @@ nnoremap <A-Right> :vertical resize +1<Enter>
 nnoremap <A-Up> :resize +1<Enter>
 nnoremap <A-Down> :resize -1<Enter>
 
-" F12 to run
-map <F12> :RustRun<CR>
-map <F12> :! g++ %:r.cpp -o %:r.out && ./%:r.out<Enter>
+" F5 to run dotnet
+map <F5> :! dotnet run<Enter>
 
-" comment C++
+" comment
 vnoremap <C-j> :norm ^xx<Enter>
 vnoremap <C-k> :norm i//<Enter>
 
 
 "NERDTree autorefresh
-nnoremap <C-r> :NERDTreeRefreshRoot<CR>
+nnoremap <A-r> :NERDTreeRefreshRoot<CR>
 
 "nerdtree tabs control
 map  <C-l> :tabn<CR>
@@ -65,15 +62,13 @@ nnoremap zz :w<CR>
 " NERDTreeToggle
 map <F8> :NERDTreeToggle<CR>
 
-"source '$HOME/.config/nvim/plug-config/coc.vim'
-
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " File explorer
     Plug 'scrooloose/NERDTree'
 
     " Auto pairs for '(' '[' '{'
-    " Plug 'jiangmiao/auto-pairs'
+    Plug 'jiangmiao/auto-pairs'
 
     " Stable version of coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -97,8 +92,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
-colorscheme challenger_deep
 
+" colorscheme challenger_deep
 " colorscheme purify "--------------------------------- Set onedark theme
 " hi Normal guibg=#252334 ctermbg=234 "---- Place this after you set the colorscheme
 " hi Normal guibg=#252834 ctermbg=234 "---- Place this after you set the colorscheme
