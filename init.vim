@@ -31,6 +31,10 @@ vnoremap <C-k> :norm i//<Enter>
 
 "NERDTree autorefresh
 nnoremap <A-r> :NERDTreeRefreshRoot<CR>
+let NERDTreeMapOpenInTab='<TAB>'
+
+" NERDTreeToggle
+map <F8> :NERDTreeToggle<CR>
 
 "nerdtree tabs control
 map  <C-l> :tabn<CR>
@@ -58,9 +62,6 @@ nnoremap qq :q!<CR>
 
 " quick save
 nnoremap zz :w<CR>
-
-" NERDTreeToggle
-map <F8> :NERDTreeToggle<CR>
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
