@@ -94,7 +94,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 call plug#end()
 
-:highlight String ctermfg=204
+:hi String ctermfg=204
+:hi Pmenu ctermfg=15 ctermbg=25
+:hi PmenuSel ctermfg=15 ctermbg=204
 
 " colorscheme challenger_deep
 " colorscheme purify "--------------------------------- Set onedark theme
