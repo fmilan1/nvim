@@ -1,0 +1,16 @@
+{
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": false,
+    "prettier.prettierPath": "/usr/lib/node_modules/prettier",
+"languageserver": {
+    "csharp": {
+      "command": "dotnet",
+      "args": ["/usr/lib/omnisharp-roslyn/OmniSharp.dll", "--languageserver", "--hostPID", "${hostPID}"],
+      "filetypes": ["cs"],
+      "rootPatterns": ["*.sln", "*.csproj"],
+      "initializationOptions": {
+        "extensionPaths": []
+      }
+    }
+  }
+}

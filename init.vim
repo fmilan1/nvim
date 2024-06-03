@@ -1,4 +1,28 @@
+
+:tnoremap <Esc> <C-\><C-n>
+
+inoremap <C-Cr> <Cr><Up>
+
+nnoremap <silent> <S-A-f> :PrettierAsync<Cr>
+
+:set clipboard+=unnamedplus
+
 let NERDTreeShowHidden=1
+let NERDTreeMapOpenInTabSilent='<S-Cr>'
+nnoremap <silent> <TAB> :tabn<Cr>
+nnoremap <silent> <S-TAB> :tabp<Cr>
+nnoremap <silent> <A-1> :tabn1<Cr>
+nnoremap <silent> <A-2> :tabn2<Cr>
+nnoremap <silent> <A-3> :tabn3<Cr>
+nnoremap <silent> <A-4> :tabn4<Cr>
+nnoremap <silent> <A-5> :tabn5<Cr>
+nnoremap <silent> <A-6> :tabn6<Cr>
+nnoremap <silent> <A-7> :tabn7<Cr>
+nnoremap <silent> <A-8> :tabn8<Cr>
+nnoremap <silent> <A-9> :tabn9<Cr>
+nnoremap <silent> <A-0> :tabn10<Cr>
+nnoremap <silent> <A-Left> :tabm -<Cr>
+nnoremap <silent> <A-Right> :tabm +<Cr>
 
 :set number
 :set scrolloff=10
@@ -23,7 +47,9 @@ inoremap <silent> <A-k> <Esc>:m .-2<CR>a
 vnoremap <silent> <A-j> :m '>+1<CR>gv
 vnoremap <silent> <A-k> :m '<-2<CR>gv
 
-inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : '<TAB>'
+inoremap <silent><expr> <C-Space> coc#refresh()
+inoremap <S-TAB> <Backspace>
 
 nnoremap <silent> <C-/> :Commentary<Cr>
 vnoremap <silent> <C-/> :Commentary<Cr>gv
@@ -34,6 +60,11 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -47,7 +78,12 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'akinsho/toggleterm.nvim'
     Plug 'preservim/nerdtree'
     Plug 'ryanoasis/vim-devicons'
-
+    Plug 'honza/vim-snippets'
+    Plug 'prettier/vim-prettier', {
+	\ 'do': 'yarn install --frozen-lockfile --production',
+	\ 'branch': 'release/0.x'
+    \ }
+    Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
 
@@ -62,6 +98,7 @@ lua <<EOF
     require("nvim-autopairs").setup {}
     require("nvim-ts-autotag").setup {}
     require("toggleterm").setup {}
+    require("ibl").setup()
 
 
     local Terminal  = require('toggleterm.terminal').Terminal
