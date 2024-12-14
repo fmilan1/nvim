@@ -11,7 +11,7 @@ nnoremap <silent> <S-A-f> :PrettierAsync<Cr>
 :set clipboard+=unnamedplus
 
 let NERDTreeShowHidden=1
-let NERDTreeMapOpenInTabSilent='<S-Cr>'
+let NERDTreeMapOpenInTabSilent='T'
 nnoremap <silent> <TAB> :tabn<Cr>
 nnoremap <silent> <S-TAB> :tabp<Cr>
 nnoremap <silent> <A-1> :tabn1<Cr>
