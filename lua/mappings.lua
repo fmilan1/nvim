@@ -41,13 +41,13 @@ cmp.setup({
 local nvimtree = require("nvim-tree")
 
 nvimtree.setup({
-  filters = {
-    dotfiles = false, -- Mutassa a rejtett fájlokat (pl. .gitignore, .env)
-    git_ignored = false, -- Mutassa a git által figyelmen kívül hagyott fájlokat is
-  },
-  -- view = {
-  --   width = 35, -- Fastruktúra szélessége
-  -- },
+    filters = {
+        dotfiles = false,    -- Mutassa a rejtett fájlokat (pl. .gitignore, .env)
+        git_ignored = false, -- Mutassa a git által figyelmen kívül hagyott fájlokat is
+    },
+    -- view = {
+    --   width = 35, -- Fastruktúra szélessége
+    -- },
 })
 
 map("n", "<A-i>", function()
